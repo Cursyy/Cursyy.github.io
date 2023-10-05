@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            overflow-wrap: break-word;
+        }
+        div{
+            margin: 0 20px;
+            min-width: 70px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for(let i = 1; i <= 9; i++){
+            const div = document.createElement("div");
+            for(let j = 1; j <= 9; j++){
+                div.innerHTML += `${i} * ${j} = ${i * j} <br>`;
+            }
+            const hr = document.createElement("hr");
+            document.body.appendChild(div);
+            document.body.appendChild(hr);
+        }
+    </script>
+</body>
+</html>

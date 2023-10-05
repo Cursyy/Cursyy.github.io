@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Опитування</title>
+  </head>
+  <body>
+    <form id="surveyForm">
+      <label for="name">Введіть ваше ім'я:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        onfocusout="lost_focus()"
+        placeholder="Ім'я"
+      />
+      <br />
+
+      <p>Чого більше ви подаєте перевагу?</p>
+      <input
+        type="radio"
+        id="iceCream"
+        name="preference"
+        onchange="radio_checked()"
+        value="Морозиво"
+      />
+      <label for="iceCream">Морозиво</label><br />
+      <input
+        type="radio"
+        id="chocolate"
+        name="preference"
+        onchange="radio_checked()"
+        value="Шоколад"
+      />
+      <label for="chocolate">Шоколад</label><br />
+      <br />
+
+      <button type="button" onclick="submitForm()">Відправити</button>
+    </form>
+
+    <script>
+      function lost_focus() {
+        console.log(document.getElementById("name").value);
+      }
+
+      function radio_checked() {
+        console.log(
+          document.querySelector('input[name="preference"]:checked').value
+        );
+      }
+
+      function submitForm() {
+        const name = document.getElementById("name").value;
+        const preference = document.querySelector(
+          'input[name="preference"]:checked'
+        );
+        if (!name || !preference) {
+          alert("Будь ласка, заповніть всі поля опитування.");
+          return;
+        }
+        const chosenPreference = preference.value;
+        alert(
+          `Дякуємо, ${name}, за вашу участь в опитуванні. Ви обрали ${chosenPreference}.`
+        );
+      }
+    </script>
+  </body>
+</html>

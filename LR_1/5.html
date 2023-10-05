@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("Type number of students in group: "));
+        let p = document.createElement("p");
+        for(let i = 0; i < num; i++){
+            let sname = prompt("Type student name: ");
+            p.innerHTML += `${sname}<br>`;
+        }
+        document.body.appendChild(p);
+        
+    </script>
+</body>
+</html>
