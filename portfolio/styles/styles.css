@@ -34,7 +34,7 @@ ol {
 .header-block {
   height: 45vh;
   position: relative;
-  background: url("../images/main-bg.png");
+  background: url("../images/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -196,6 +196,7 @@ span {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
+  height: 60%;
 }
 
 .photo_box > div {
@@ -398,4 +399,73 @@ span {
   .menu-list {
     background: transparent;
   }
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: var(--grey_bg);
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: var(--grey_bg);
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: var(--grey_text);
+  padding: 0.8rem 0.9rem;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: transparent;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.topnav a.icon img{
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* Style the active link (or home/logo) */
+.work_name {
+  background-color: var(--grey_bg);
+  color: var(--grey_text);
+  text-align: center;
+}
+
+#myLinks a:hover {
+  background-color: white;
+  color: var(--grey_text);
+  border: 1px solid var(--grey_bg);
 }
