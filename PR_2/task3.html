@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div>
+      <input type="text" id="input" placeholder="Введіть фразу" />
+      <button onclick="startTyping()">Розпочати друк</button>
+    </div>
+    <p id="output"></p>
+
+    <script>
+      function typeWriter(text, i, element) {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(function () {
+            typeWriter(text, i, element);
+          }, 50);
+        }
+      }
+
+      function startTyping() {
+        const inputText = document.getElementById("input").value;
+        const outputElement = document.getElementById("output");
+        outputElement.innerHTML = "";
+        typeWriter(inputText, 0, outputElement);
+      }
+    </script>
+  </body>
+</html>

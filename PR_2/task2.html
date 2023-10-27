@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        background-color: rgb(181, 244, 223);
+      }
+
+      p {
+        font-size: 1.5rem;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+      }
+
+      input {
+        size: 10;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: transparent;
+        border-radius: 10px;
+        border: 2px solid black;
+        padding: 10px 0;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="info">Час оновлюється кожні 30с.</p>
+    <input type="text" id="chas" />
+    <script>
+      let chas = document.getElementById("chas");
+      let info = document.getElementById("info");
+      function updateTime() {
+        const time = new Date();
+        let hours = time.getHours();
+        let minutes = time.getMinutes();
+        let seconds = time.getSeconds();
+
+        hours = hours < 10 ? (hours = "0" + hours) : hours;
+        minutes = minutes < 10 ? (minutes = "0" + minutes) : minutes;
+        seconds = seconds < 10 ? (seconds = "0" + seconds) : seconds;
+
+        const timeString = hours + ":" + minutes + ":" + seconds;
+        chas.value = timeString;
+        alert("Час було оновлено");
+        setTimeout(updateTime, 30000);
+      }
+      updateTime();
+    </script>
+  </body>
+</html>

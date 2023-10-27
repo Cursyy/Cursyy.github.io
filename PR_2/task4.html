@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div>
+      <input type="text" id="bet" placeholder="Введіть суму" />
+      <button id="start_btn">start</button>
+    </div>
+    <p id="result"></p>
+
+    <script>
+      let bet = document.getElementById("bet");
+      let btn = document.getElementById("start_btn");
+      let result = document.getElementById("result");
+
+      function getRandom(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+
+      function check_bet() {
+        let value = bet.value;
+        if (value <= 0 || value == null || value == isNaN) {
+          result.innerHTML = "Не правильне значення";
+        } else {
+          let num = getRandom(-5, 5);
+          result.innerHTML =
+            num > 0 ? "Ви виграли: " + num * value : "Ви програли!";
+        }
+      }
+
+      btn.addEventListener("click", () => {
+        result.innerHTML = "";
+        setTimeout(check_bet, 1000);
+      });
+    </script>
+  </body>
+</html>
