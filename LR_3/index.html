@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="tabs">
+        <div class="tab whiteborder">border-radius</div>
+        <div class="tab">outline</div>
+        <div class="tab">overflow</div>
+        <div class="tabContent">
+            <div>
+                <div>Верхній лівий кут:</div>
+                <input type="range" id="rtl" min="0" max="100" value="0" oninput="generate()">
+                <input id="ttl" type="number" value="0" oninput="change()">
+            </div>
+            <div>
+                <div>Верхній правий кут:</div>
+                <input type="range" id="rtr" min="0" max="100" value="0" oninput="generate()">
+                <input id="ttr" type="number" value="0" oninput="change()">
+            </div>
+            <div>
+                <div>Нижній правий кут:</div>
+                <input type="range" id="rbr" min="0" max="100" value="0" oninput="generate()">
+                <input id="tbr" type="number" value="0" oninput="change()">
+            </div>
+            <div>
+                <div>Нижній лівий кут:</div>
+                <input type="range" id="rbl" min="0" max="100" value="0" oninput="generate()">
+                <input id="tbl" type="number" value="0" oninput="change()">
+            </div>
+            <div id="block"></div>
+            <div class="output_box">
+                <div>CSS Code:</div>
+                <textarea type="text" id="outputcode" readonly></textarea>
+                <button class="copy_btn" onclick="copyCode('outputcode')">Copy</button>
+            </div>
+        </div>
+        <div class="tabContent">
+            <div>
+                <div>Outline thinknes</div>
+                <input type="number" id="outlineThinknes" min="0" max="100" value="0" oninput="changeOutline()">
+            </div>
+            <div>
+                <div>Outline</div>
+                <select name="" id="outline" onchange="changeOutline()">
+                    <option value="dashed">Dashed</optins>
+                    <option value="solid" selected>Solid</option>
+                    <option value="inset">Inset</option>
+                </select>
+            </div>
+            <div>
+                <div>Color</div>
+                <input type="color" id="outlineColor" oninput="changeOutline()">
+            </div>
+            <div>
+                <div>Outline offset</div>
+                <input type="number" id="outlineOffset" oninput="changeOutline()" value="0">
+            </div>
+            <div id="block1"></div>
+            <div class="output_box">
+                <div>CSS Code:</div>
+                <textarea type="text" id="outputcode1" readonly></textarea>
+                <button class="copy_btn" onclick="copyCode('outputcode1')">Copy</button>
+            </div>
+        </div>
+        <div class="tabContent">
+            <div>Type
+                <select name="" id="overflowType" onchange="changeOverflow()">
+                    <option value="overflow" selected>overflow</option>
+                    <option value="overflowX">overflow-x</option>
+                    <option value="overflowY">overflow-y</option>
+                </select>
+            </div>
+            <div>Value
+                <select name="" id="overflowValue" onchange="changeOverflow()">
+                    <option value="hidden">hidden</option>
+                    <option value="auto">auto</option>
+                    <option value="scroll">scroll</option>
+                    <option value="visible">visible</option>
+                </select>
+            </div>
+            <div id="block2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quidem architecto modi laudantium id quam, qui eum provident, ut facilis quas consectetur officiis beatae vitae cum! Consequuntur velit blanditiis veritatis.</div>
+            <div class="output_box">
+                <div>CSS Code:</div>
+                <textarea type="text" id="outputcode2" readonly></textarea>
+                <button class="copy_btn" onclick="copyCode('outputcode2')">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
