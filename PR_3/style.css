@@ -1,0 +1,240 @@
+html {
+    color: white;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(36, 57, 68);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    font-size: 0.5rem;
+    margin: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+    width: 60%;
+    height: 80%;
+    background-color: rgb(70, 97, 110);
+    padding: 1rem;
+    border-radius: 25px;
+    border: 5px solid rgb(70, 97, 110);
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+    text-shadow: 0px 0px 3px lightblue;
+}
+
+.input_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.js_input {
+    width: 60%;
+    margin-right: 2rem;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.add_btn {
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(47, 152, 47);
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5rem;
+
+}
+
+.done_btn_list {
+    border: 3px solid white;
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: rgb(43, 151, 43);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all .5s;
+}
+
+.todo_btn_list {
+    border: 3px solid white;
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all .5s;
+}
+
+.done_btn_list:hover {
+    box-shadow: 0px 0px 10px rgb(43, 151, 43);
+}
+
+.todo_btn_list:hover {
+    box-shadow: 0px 0px 10px red;
+}
+
+#listbox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    height: 320px;
+    overflow-y: auto;
+}
+
+.todoitem {
+    display: flex;
+    color: white;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    vertical-align: center;
+    overflow-wrap: break-word;
+}
+
+.doneitem {
+    color: white;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    vertical-align: center;
+    overflow-wrap: break-word;
+    text-decoration: line-through;
+}
+
+.done_btn {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    margin-right: 1rem;
+    transition: all .5s;
+}
+
+.done_btn:hover {
+    background-color: rgb(43, 151, 43);
+    cursor: pointer;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(43, 151, 43);
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+.todoItemText > input{
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.todoItemText:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 540px){
+    html{
+        font-size: 12px;
+    }
+
+    .main{
+        width: 80%;
+    }
+
+    .done_btn{
+        width: 15px;
+        height: 15px;
+    }
+    
+    .add_btn{
+        width: 35px;
+        height: 35px;
+    }
+
+    .done_btn_list{
+        width: 70px;
+        height: 35px;
+    }
+
+    .todo_btn_list{
+        width: 70px;
+        height: 35px;
+    }
+
+    #listbox{
+        height: 220px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    html{
+        font-size: 12px;
+    }
+
+    main{
+        width: 70%;
+    }
+
+    #listbox{
+        height: 80%;
+    }
+    
+    .add_btn{
+        width: 30px;
+        height: 30px;
+    }
+
+    .done_btn_list{
+        width: 60px;
+        height: 30px;
+    }
+
+    .todo_btn_list{
+        width: 60px;
+        height: 30px;
+    }
+}
