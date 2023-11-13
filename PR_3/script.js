@@ -6,6 +6,7 @@ const inputNode = document.querySelector('.js_input');
 const btnNode = document.querySelector('.add_btn');
 const donebtnNode = document.querySelector('.done_btn_list');
 donebtnNode.innerHTML = `DONE`;
+inputNode.focus();
 
 function add(text) {
     const todoitem = {
@@ -64,6 +65,7 @@ btnNode.addEventListener('click', () => {
     add(text);
     output(list);
     inputNode.value = '';
+    inputNode.focus();
 });
 
 todolistNode.addEventListener('click', (event) => {
