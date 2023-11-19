@@ -1,0 +1,302 @@
+html{
+    /* General variables for the page */
+    --mainColor: rgb(70, 97, 110);
+    --mainColorDark: rgb(36, 57, 68);
+    --mainTextColor: white;
+    --greenElementsColor: rgb(43, 151, 43);
+    --redElementsColor: rgb(220, 49, 49);
+    color: var(--mainTextColor);
+    font-size: 10px;
+}
+
+* {
+    /* Settings for all elements */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mainColorDark);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.authorTag{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 0.8rem;
+    margin: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainColor);
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+    text-shadow: 0px 0px 3px lightblue;
+}
+
+.input_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.js_input {
+    width: 60%;
+    margin-right: 2rem;
+    border: none;
+    border-bottom: 2px solid var(--mainTextColor);
+    background-color: transparent;
+    color: var(--mainTextColor);
+    font-size: 1.5rem;
+}
+
+.add_btn {
+    border: 2px solid var(--mainTextColor);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    color: var(--mainTextColor);
+    font-weight: bolder;
+    font-size: 1.5rem;
+    display: block;
+    transition: all .3s;
+    padding: 0;
+}
+
+.add_btn:hover {
+    background-color: var(--greenElementsColor);
+    cursor: pointer;
+}
+
+.done_btn_list {
+    border: 2px solid var(--mainTextColor);
+    height: 25px;
+    width: 60px;
+    border-radius: 8px;
+    background-color: var(--greenElementsColor);
+    color: var(--mainTextColor);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.todo_btn_list {
+    border: 2px solid var(--mainTextColor);
+    height: 25px;
+    width: 60px;
+    border-radius: 8px;
+    background-color: var(--redElementsColor);
+    color: var(--mainTextColor);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all .5s;
+}
+
+.done_btn_list:hover {
+    box-shadow: 0px 0px 10px var(--greenElementsColor);
+}
+
+.todo_btn_list:hover {
+    box-shadow: 0px 0px 10px var(--redElementsColor);
+}
+
+#listbox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.todoitem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--mainTextColor);
+    margin: 10px 0;
+    font-size: 1.5rem;
+    vertical-align: center;
+    overflow-wrap: break-word;
+}
+
+.doneitem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--mainTextColor);
+    margin: 10px 0;
+    font-size: 1.5rem;
+    vertical-align: center;
+    overflow-wrap: break-word;
+}
+
+.done_btn {
+    border: 2px solid var(--mainTextColor);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    transition: all .3s;
+    margin-right: 1rem;
+}
+
+.done_btn:hover {
+    background-color: var(--greenElementsColor);
+    cursor: pointer;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--greenElementsColor);
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+.todoItemText > input{
+    border: none;
+    border-bottom: 2px solid var(--mainTextColor);
+    background-color: transparent;
+    color: var(--mainTextColor);
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.todoItemText{
+    width: 55%;
+}
+
+.doneItemText{
+    width: 65%;
+    text-decoration: line-through;
+}
+
+.time{
+    width: 20%;
+    text-align: center;
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.todoItemText:hover{
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+
+.deleteBtn{
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 50%;
+    color: var(--mainTextColor);
+    font-weight: bold;
+    border: 2px solid var(--mainTextColor);
+    padding: 0 5px;
+    transition: all .3s;
+    font-size: 1rem;
+}
+
+.deleteBtn:hover{
+    background-color: var(--redElementsColor);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 540px) {
+    html{
+        font-size: 12px;
+    }
+
+    .add_btn{
+        width: 30px;
+        height: 30px;
+    }
+
+    .done_btn_list{
+        width: 65px;
+        height: 30px;
+    }
+
+    .todo_btn_list{
+        width: 65px;
+        height: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html{
+        font-size: 16px;
+    }
+
+    .add_btn{
+        width: 40px;
+        height: 40px;
+    }
+
+    .done_btn_list{
+        width: 80px;
+        height: 40px;
+    }
+
+    .todo_btn_list{
+        width: 80px;
+        height: 40px;
+    }
+
+    .done_btn{
+        width: 30px;
+        height: 30px;
+    }
+
+    .deleteBtn{
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .todoItemText{
+        font-size: 1.8rem;
+    }
+
+    .doneItemText{
+        font-size: 1.8rem;
+    }
+}
+
+@media  screen and (min-width: 1024px){
+    main{
+        width: 70%;
+        height: 80%;
+        border-radius: 15px;
+        border: 5px solid var(--mainColor);
+    }
+}
